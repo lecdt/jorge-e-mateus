@@ -1,0 +1,270 @@
+/* index */
+
+@import '../global/global.css';
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-image: url('../../../files/images/background.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Título */
+
+header .titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 100px;
+  min-height: 100vh;
+  width: 50%;
+  z-index: 5;
+}
+
+header .titulo h2 {
+  font-family: var(--bold);
+  font-size: clamp(2.5rem, 3vw, 3rem);
+  color: var(--cor-branco);
+  line-height: 1;
+}
+
+header .titulo img.texto {
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s;
+}
+
+header .titulo img.texto:hover {
+  filter: brightness(80%);
+}
+
+header .titulo .item {
+  display: flex;
+  align-items: center;
+  margin: 30px 0 0 0;
+}
+
+header .titulo .item p {
+  font-family: var(--bold);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--cor-branco);
+}
+
+header .titulo .item p span {
+  color: var(--cor-vermelho);
+}
+
+header .titulo .item img {
+  width: 100%;
+  max-width: 50px;
+  margin: 0 10px 0 0;
+}
+
+header .titulo a {
+  font-family: var(--bold);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--cor-branco);
+  background-color: var(--cor-vermelho);
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin: 30px 0 0 0;
+  transition: all 0.3s;
+}
+
+header .titulo a:hover {
+  color: var(--cor-preto);
+  background-color: var(--cor-branco);
+}
+
+/* Imagem */
+
+header .imagem {
+  position: relative;
+  width: 50%;
+  z-index: 2;
+}
+
+header .imagem img.jorge {
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  bottom: 0;
+  right: 450px;
+  z-index: 4;
+  transition: all 0.3s;
+}
+
+header .imagem img.jorge:hover {
+  filter: brightness(140%);
+}
+
+header .imagem img.mateus {
+  width: 100%;
+  max-width: 430px;
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+  z-index: 3;
+  transition: all 0.3s;
+}
+
+header .imagem img.mateus:hover {
+  filter: brightness(140%);
+}
+
+header .imagem img.texto {
+  width: 100%;
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  transform: rotate(-10deg);
+  z-index: 2;
+  animation: imgTextoImagem 35s linear infinite;
+}
+
+@keyframes imgTextoImagem {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.32) rotate(-10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Chamas */
+
+header img.chamas {
+  width: 150%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  animation: chamas 35s linear infinite;
+  opacity: 0.5;
+}
+
+header img.chamasMobile {
+  display: none;
+}
+
+@keyframes chamas {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.3) rotate(-20deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+}
+
+/* Responsivo */
+
+@media screen and (max-width: 1000px) {
+  header {
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('../../../files/images/background-mobile.png');
+  }
+  
+  /* Título */
+  
+  header .titulo {
+    padding: 50px 30px 30px 30px;
+    min-height: auto;
+    width: 100%;
+  }
+  
+  header .titulo img.texto {
+    max-width: 250px;
+  }
+  
+  header .titulo .item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0 0;
+  }
+  
+  header .titulo .item p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+  
+  header .titulo .item img {
+    max-width: 30px;
+  }
+  
+  header .titulo a {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin: 20px 0 0 0;
+  }
+  
+  /* Imagem */
+  
+  header .imagem {
+    width: 100%;
+    min-height: 55vh;
+  }
+  
+  header .imagem img.jorge {
+    max-width: 220px;
+    right: 170px;
+  }
+  
+  header .imagem img.mateus {
+    max-width: 235px;
+    right: 10px;
+  }
+  
+  header .imagem img.texto {
+    width: 120%;
+    top: 50px;
+    right: -20px;
+  }
+  
+  /* Chamas */
+  
+  header img.chamas {
+    display: none;
+  }
+
+  header img.chamasMobile {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    animation: chamas 15s linear infinite;
+    opacity: 0.5;
+  }
+  
+  @keyframes chamas {
+    0% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.3) rotate(20deg);
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0.5;
+    }
+  }
+}
